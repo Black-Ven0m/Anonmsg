@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>ZeroHex · Anonymous Chat (Advanced Admin)</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- LOGIN VIEW -->
+  <div id="view-login" class="view center">
+    <h1 class="logo">ZEROHEX CHAT</h1>
+    <input id="inp-username" placeholder="Username" />
+    <input id="inp-password" type="password" placeholder="Password" />
+    <button id="btn-login">Login</button>
+    <p class="link" id="open-admin">Admin Login</p>
+  </div>
+
+  <!-- ADMIN LOGIN VIEW -->
+  <div id="view-admin-login" class="view center hidden">
+    <h1 class="logo">ADMIN LOGIN</h1>
+    <input id="inp-admin-user" placeholder="Admin username" />
+    <input id="inp-admin-pass" type="password" placeholder="Admin password" />
+    <button id="btn-admin-login">Login as Admin</button>
+    <p class="link" id="admin-back">← Back to user login</p>
+  </div>
+
+  <!-- CHAT VIEW -->
+  <div id="view-chat" class="view hidden">
+    <header class="topbar">
+      <div class="left">
+        <span id="brand">ZEROHEX</span>
+        <span id="yourname"></span>
+      </div>
+      <div class="right">
+        <button id="btn-theme" title="Switch theme (admin only)">Theme</button>
+        <button id="btn-open-admin-panel" class="hidden">Admin Panel</button>
+        <button id="btn-logout">Logout</button>
+      </div>
+    </header>
+
+    <main class="main">
+      <aside class="sidebar">
+        <h3>Online</h3>
+        <div id="user-list"></div>
+        <h3>Pinned</h3>
+        <div id="pinned-list"></div>
+      </aside>
+
+      <section class="chat-area">
+        <div id="messages"></div>
+
+        <div class="input-large">
+          <input id="msg-input" placeholder="Type your message..." />
+        </div>
+        <button id="btn-send" class="big">Send</button>
+      </section>
+
+      <aside class="admin-sidebar hidden" id="admin-sidebar">
+        <h3>Admin Panel</h3>
+
+        <label>Slow mode (sec)</label>
+        <input id="admin-slow" placeholder="e.g. 5" />
+
+        <label>Mute user (secs)</label>
+        <input id="admin-mute-user" placeholder="username" />
+        <input id="admin-mute-secs" placeholder="seconds" />
+        <button id="admin-mute-btn">Mute</button>
+
+        <label>Shadow-ban user</label>
+        <input id="admin-shadow-user" placeholder="username" />
+        <button id="admin-shadow-ban">Shadow-Ban</button>
+
+        <label>Hard Ban</label>
+        <input id="admin-ban-user" placeholder="username" />
+        <button id="admin-ban-btn">Ban</button>
+
+        <label>Unban</label>
+        <input id="admin-unban-user" placeholder="username" />
+        <button id="admin-unban-btn">Unban</button>
+
+        <hr />
+
+        <button id="admin-pin-btn">Pin selected</button>
+        <button id="admin-highlight-btn">Highlight selected</button>
+        <button id="admin-edit-btn">Edit selected</button>
+        <button id="admin-delete-btn">Delete selected</button>
+
+        <hr />
+
+        <button id="admin-broadcast">Broadcast</button>
+        <button id="admin-stealth-toggle">Toggle Stealth</button>
+        <button id="admin-theme-green">Matrix Theme</button>
+        <button id="admin-theme-red">Red Theme</button>
+        <button id="admin-theme-blue">Blue Theme</button>
+
+        <h4>Activity Logs</h4>
+        <div id="activity-logs" class="logs"></div>
+      </aside>
+    </main>
+  </div>
+
+<script type="module" src="script.js"></script>
+</body>
+</html>
